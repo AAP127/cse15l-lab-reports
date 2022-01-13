@@ -10,4 +10,4 @@ _Again_
 
 ## And another
 
-[Website](https://aap127.github.io/cse15l-lab-reports/)
+[Website](aap127.github.io/cse15l-lab-reports/)
