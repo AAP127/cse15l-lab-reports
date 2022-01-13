@@ -9,4 +9,4 @@ _Again_
 
 ##And another
 
-[Link](http://https://aap127.github.io/cse15l-lab-reports/)
+[Website](http://https://aap127.github.io/cse15l-lab-reports/)
