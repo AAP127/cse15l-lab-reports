@@ -31,3 +31,18 @@ You may be prompted with a message stating that the authenticity of the host can
 ![SSHLogin](SSHLogin.PNG)
 
 ## 3. Trying Some Commands
+Now that you are connected to the server, you can try running some commands. Useful ones to try could include:
+
+* >cd
+* >cd ~
+* >ls
+* >ls -a
+* >ls -lat
+
+You can see what different parts of commands do. For example, you can see the differences between "ls" and "ls -a" here:
+
+![LSCommands](LSCommands.PNG)
+
+*Either Ctrl+D or typing  > `exit` will close the connection to the server
+
+## 4. Moving files with scp
