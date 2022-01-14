@@ -23,11 +23,11 @@ Now that you have a working environment to connect from, go to the top bar of VS
 
  Before you can connect remotely, you will need to ensure you have installed a program called [OpenSSH](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse). In addition, you will need to access course specific CS15L account, which you can setup up [here](https://sdacs.ucsd.edu/~icc/index.php). Your account name should be in a similar format to "cs15lwi22zz@ieng6.ucsd.edu".
 
- Now try to enter the following command (replacing the account name with your own):
+ Now try to enter the following command in the terminal (replacing the account name with your own):
 
     > ssh cs15lwi22zz@ieng6.ucsd.edu
 
-You may be prompted with a message stating that the authenticity of the host cannot be established. Since this is your first time connecting, you can type "yes". Now enter your account password (you set this when getting your account). For privacy reasons, the terminal will show no input as you type. You should see something like this:
+You may be prompted with a message stating that the authenticity of the host cannot be established. Since this is your first time connecting, you can type "yes". Now enter your account password (you set this when getting your account). For privacy reasons, the terminal will show no input as you type. You should see something like this after logging in:
 
 ![SSHLogin](SSHLogin.PNG)
 
@@ -46,7 +46,7 @@ You can see what different parts of commands do. For example, you can see the di
 
 ![LSCommands](LSCommands.PNG)
 
-*Either Ctrl+D or typing  > `exit` will close the connection to the server
+*Either Ctrl+D or typing  `exit` will close the connection to the server
 
 ## 4. Moving files with scp
 Now that you have tried out some commands on the server, we can now move on to transferring files to it. Create a file called `WhereAmI.java` with these contents:
@@ -62,23 +62,24 @@ class WhereAmI {
 }
 ```
 
-Using `javac` and `java, run the file on your computer and note the output. Then in the terminal, run this command to transfer the file to ieng6:
+Using `javac` and `java`, run the file on your computer and note the output. Then in the terminal, run this command to transfer the file to ieng6:
 
     scp WhereAmI.java cs15lwi22zz@ieng6.ucsd.edu:~/
 
 You should be prompted to enter your password and the transfer will look something like this:
 
 ![SCPFile](SCPFile.PNG)
-*Note that the passphrase line may look slightly different on your client.
 
 Now log back into ieng6 and type `ls` ; you should see that the file is now on the server. Run it on ieng using `javac` and `java`, and compare the output with that of your local machine.
+
+*`scp` is used to transfer files using SSH.
 
 ## 5. Setting up an SSH Key
 In order to log on to ieng6 without always typing in a password, we can generate a public-private key pair. Type `ssh-keygen` into your console and you should see something like this:
 
 ![SSHKeygen](SSHKeygen.PNG)
 
-*Follow [these extra steps](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement#user-key-generation) if you are on Windows.
+*Follow [these extra steps](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement#user-key-generation) before continuing, if you are on Windows.
 
 Now we need to copy the public key to ieng6 by running these commands (using your account username)
 
@@ -93,3 +94,15 @@ Now we need to copy the public key to ieng6 by running these commands (using you
 Now you should be able to `ssh` or `scp` from this client to ieng6 without entering your password.
 
 ## 6. Optimizing Remote Running
+To help you save time while running commands and editing files, you can run commands remotely and multiple at a time.
+
+By entering `ssh cs15lwi22@ieng6.ucsd.edu "COMMAND"` (using your account), you can run a command on ieng6 from your client without first logging in. An example would look like this:
+
+![RemoteLS](RemoteLS.PNG)
+
+In addition, you can run multiple commands together using semicolons. For example, running `cp WhereAmI.java OtherMain.java; javac OtherMain.java; java WhereAmI` yields the following result:
+
+![RemoteCombined](RemoteCombined.PNG)
+
+*Some other helpful notes: 
+Pressing the up arrow in your terminal can allow you to recall previous commands. This can save you time when repeatedly running commands. For example, you could edit a file locally, then quickly upload, compile, and run it in just a few clicks.
