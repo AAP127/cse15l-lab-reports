@@ -1,11 +1,12 @@
 # Week 2 Lab Report: Remote Access
+**Formatting inspired by original Lab 1 writeup
 
 ## 1. Installing Visual Studio Code
 For the purposes of this tutorial, we will use Microsoft Visual Studio Code (VScode for short) as our work environment. To download it, use [this link](https://code.visualstudio.com/) which will take you to the website for VScode, which should like like this:
 
 ![VScode_Website](VScodeimage.PNG)
 
-Download the applicable version for your system, and then install it. Make sure to also [install the Java JDK](https://www.oracle.com/java/technologies/downloads/). Upon opening a Java file in VScode, it may prompt you to install recommended addons, which you can install at this time. Your open environment should look something like this:
+Download the applicable version for your system, and then install it. Make sure to also [install the Java JDK](https://www.oracle.com/java/technologies/downloads/) for later use. Upon opening a Java file in VScode, it may prompt you to install recommended addons, which you can install at this time. Your open environment should look something like this:
 
 ![Open_VScode](EmptyVScode.PNG)
 
@@ -30,6 +31,8 @@ You may be prompted with a message stating that the authenticity of the host can
 
 ![SSHLogin](SSHLogin.PNG)
 
+*The ssh command, followed by your account name is how you will log in.
+
 ## 3. Trying Some Commands
 Now that you are connected to the server, you can try running some commands. Useful ones to try could include:
 
@@ -46,3 +49,47 @@ You can see what different parts of commands do. For example, you can see the di
 *Either Ctrl+D or typing  > `exit` will close the connection to the server
 
 ## 4. Moving files with scp
+Now that you have tried out some commands on the server, we can now move on to transferring files to it. Create a file called `WhereAmI.java` with these contents:
+
+```
+class WhereAmI {
+  public static void main(String[] args) {
+    System.out.println(System.getProperty("os.name"));
+    System.out.println(System.getProperty("user.name"));
+    System.out.println(System.getProperty("user.home"));
+    System.out.println(System.getProperty("user.dir"));
+  }
+}
+```
+
+Using `javac` and `java, run the file on your computer and note the output. Then in the terminal, run this command to transfer the file to ieng6:
+
+    scp WhereAmI.java cs15lwi22zz@ieng6.ucsd.edu:~/
+
+You should be prompted to enter your password and the transfer will look something like this:
+
+![SCPFile](SCPFile.PNG)
+*Note that the passphrase line may look slightly different on your client.
+
+Now log back into ieng6 and type `ls` ; you should see that the file is now on the server. Run it on ieng using `javac` and `java`, and compare the output with that of your local machine.
+
+## 5. Setting up an SSH Key
+In order to log on to ieng6 without always typing in a password, we can generate a public-private key pair. Type `ssh-keygen` into your console and you should see something like this:
+
+![SSHKeygen](SSHKeygen.PNG)
+
+*Follow [these extra steps](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement#user-key-generation) if you are on Windows.
+
+Now we need to copy the public key to ieng6 by running these commands (using your account username)
+
+    > ssh cs15lwi22zz@ieng6.ucsd.edu
+        (Enter Password)
+    > mkdir .ssh
+        (Logout from ieng6)
+    > scp /Users/USERNAME/.ssh/id_rsa.pub cs15lwi22@ieng6.ucsd.edu:~/.ssh/authorized_keys
+        
+    *Replace USERNAME with your local computer account username
+
+Now you should be able to `ssh` or `scp` from this client to ieng6 without entering your password.
+
+## 6. Optimizing Remote Running
