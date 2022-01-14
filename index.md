@@ -3,7 +3,7 @@
 ## 1. Installing Visual Studio Code
 For the purposes of this tutorial, we will use Microsoft Visual Studio Code (VScode for short) as our work environment. To download it, use [this link](https://code.visualstudio.com/) which will take you to the website for VScode, which should like like this:
 
-![VScode_Website](VScodeimage.png)
+![VScode_Website](VScodeimage.PNG)
 
 Download the applicable version for your system, and then install it. Make sure to also [install the Java JDK](https://www.oracle.com/java/technologies/downloads/). Upon opening a Java file in VScode, it may prompt you to install recommended addons, which you can install at this time. Your open environment should look something like this:
 
