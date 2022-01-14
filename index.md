@@ -1,19 +1,21 @@
-Placeholder Text
+# Week 2 Lab Report: Remote Access
 
-*Italicized text*
+## 1. Installing Visual Studio Code
+For the purposes of this tutorial, we will use Microsoft Visual Studio Code (VScode for short) as our work environment. To download it, use [this link](https://code.visualstudio.com/) which will take you to the website for VScode, which should like like this:
 
-_Again_
+![VScode_Website](VScodeimage.png)
 
-**Bold**
+Download the applicable version for your system, and then install it. Make sure to also [install the Java JDK](https://www.oracle.com/java/technologies/downloads/). Upon opening a Java file in VScode, it may prompt you to install recommended addons, which you can install at this time. Your open environment should look something like this:
 
-# Here's a modified heading
+![Open_VScode](EmptyVScode.png)
 
-## And another
+## 2. Remotely Connecting
+Now that you have a working environment to connect from, go to the top bar of VScode and click on the "Terminal" section, and go to "New Terminal":
 
-`hello`
+![NewTerminal](VScodeNewTerminal.png)
 
-_This is a new change_
 
-[Website](https://aap127.github.io/cse15l-lab-reports/)
 
-![Image](file.PNG)
+ Alternatively you can press Ctrl+Shift+`. This will open a new terminal where we can put in commands:
+
+ ![OpenTerminal](VScodeTerminal.png) 
