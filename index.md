@@ -7,15 +7,15 @@ For the purposes of this tutorial, we will use Microsoft Visual Studio Code (VSc
 
 Download the applicable version for your system, and then install it. Make sure to also [install the Java JDK](https://www.oracle.com/java/technologies/downloads/). Upon opening a Java file in VScode, it may prompt you to install recommended addons, which you can install at this time. Your open environment should look something like this:
 
-![Open_VScode](EmptyVScode.png)
+![Open_VScode](EmptyVScode.PNG)
 
 ## 2. Remotely Connecting
 Now that you have a working environment to connect from, go to the top bar of VScode and click on the "Terminal" section, and go to "New Terminal":
 
-![NewTerminal](VScodeNewTerminal.png)
+![NewTerminal](VScodeNewTerminal.PNG)
 
 
 
  Alternatively you can press Ctrl+Shift+`. This will open a new terminal where we can put in commands:
 
- ![OpenTerminal](VScodeTerminal.png) 
+ ![OpenTerminal](VScodeTerminal.PNG) 
