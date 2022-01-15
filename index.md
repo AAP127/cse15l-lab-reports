@@ -21,7 +21,7 @@ Now that you have a working environment to connect from, go to the top bar of VS
 
  ![OpenTerminal](VScodeTerminal.PNG) 
 
- Before you can connect remotely, you will need to ensure you have installed a program called [OpenSSH](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse). In addition, you will need to access course specific CS15L account, which you can setup up [here](https://sdacs.ucsd.edu/~icc/index.php). Your account name should be in a similar format to "cs15lwi22zz@ieng6.ucsd.edu".
+ Before you can connect remotely, you will need to ensure you have installed a program called [OpenSSH](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse). In addition, you will need to access your course specific CS15L account, which you can set up [here](https://sdacs.ucsd.edu/~icc/index.php). Your account name should be in a similar format to "cs15lwi22zz@ieng6.ucsd.edu".
 
  Now try to enter the following command in the terminal (replacing the account name with your own):
 
