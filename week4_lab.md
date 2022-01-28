@@ -33,3 +33,22 @@ What we realized is that, due to only requiring the left and right parenthesis i
 ![GithubIllegalArg](week_4_source/GithubIllegalArg.PNG)
 
 *Changes can be found on "Added new tests" commit. Extra description in comments.
+
+In this case, the bug was that the program continued running after finding input to be invalid. As mentioned above, the link in test-file2.md had both parenthesis, allowing it to still be parsed after being deemed invalid. This led to the program printing two seperate statements.
+
+## Code Change 3
+Failure inducing input: https://github.com/AAP127/markdown-parse/blob/main/extra-test.md
+
+Another test to try again involved invalid formatting, but changing the input to where the right parenthesis is missing; this condition is present in extra-test.md. Running MarkdownParse.java with extra-test.md crashes the program with a StringIndexOutOfBoundsException:
+
+![IndexException](week_4_source/RightParenException.PNG)
+
+Since the right parenthesis is missing, `closeParen` will not be found, and will equal -1. By throwing an exception, the program can't try to access -1 as an index.
+
+![AddingExceptionThrow](week_4_source/ThrowException2.PNG)
+
+*Changes can be found on "Allow program to deal with missing right parenthesis " commit. Extra description in commit.
+
+For this case, the input not having the closing parenthesis for the link led to the program trying to access -1 as an index. Once again, the program was not equipped to handle input in this format, cauing the StringIndexOutOfBoundsException.
+
+
