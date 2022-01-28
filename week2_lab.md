@@ -104,5 +104,7 @@ In addition, you can run multiple commands together using semicolons. For exampl
 
 ![RemoteCombined](week_2_source/RemoteCombined.PNG)
 
-*Some other helpful notes: 
-Pressing the up arrow in your terminal can allow you to recall previous commands. This can save you time when repeatedly running commands. For example, you could edit a file locally, then quickly upload, compile, and run it in just a few clicks.
+*A helpful note: 
+Pressing the up arrow in your terminal can allow you to recall previous commands. After saving a local file, you can upload, compile, and run it in around 6 keystrokes!
+
+![6Keystrokes](week_2_source/6Keystrokes.png)
