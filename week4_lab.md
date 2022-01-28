@@ -16,9 +16,20 @@ To allow the program to account for the formatting of test-file2.md, we added a 
 
 ![GithubInvalidInput](week_4_source/GithubInvalidInput.PNG)
 
+*Changes can be found on "Accounted for missing right bracket" commit. Extra description in comments.
+
+
 The main issue with this test case was that the improper formatting, missing a right bracket, led the program to hang trying to find it. The "bug" of the program- it requires a rigid structure- meant that this situation would lead the program to give no response when running test-file2.md. 
 
 ## Code Change 2
 Failure inducing input: https://github.com/AAP127/markdown-parse/blob/main/test-file2.md
 
-After changing the code to not completely stall the MArdownParse.java, it would run test-file2.md, but still had some problematic results, showing up as incorrect output.
+After changing the code to not completely stall MarkdownParse.java, it would run test-file2.md, but still had some problematic results, showing up as incorrect output.
+
+![DoubleOutput](week_4_source/DoubleOutput.PNG)
+
+What we realized is that, due to only requiring the left and right parenthesis in the correct spot, the program was able to still parse the link. This cause two sets of output, one claiming the input was invalid, yet the other showing normal functionality. To fix this, we decided that this situation should throw an IllegalArgumentException, specifically when nextOpenBracket wasn't found.
+
+![GithubIllegalArg](week_4_source/GithubIllegalArg.PNG)
+
+*Changes can be found on "Added new tests" commit. Extra description in comments.
