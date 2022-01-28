@@ -4,22 +4,22 @@
 ## 1. Installing Visual Studio Code
 For the purposes of this tutorial, we will use Microsoft Visual Studio Code (VScode for short) as our work environment. To download it, use [this link](https://code.visualstudio.com/) which will take you to the website for VScode, which should like like this:
 
-![VScode_Website](VScodeimage.PNG)
+![VScode_Website](week_2_source/VScodeimage.PNG)
 
 Download the applicable version for your system, and then install it. Make sure to also [install the Java JDK](https://www.oracle.com/java/technologies/downloads/) for later use. Upon opening a Java file in VScode, it may prompt you to install recommended addons, which you can install at this time. Your open environment should look something like this:
 
-![Open_VScode](EmptyVScode.PNG)
+![Open_VScode](week_2_source/EmptyVScode.PNG)
 
 ## 2. Remotely Connecting
 Now that you have a working environment to connect from, go to the top bar of VScode and click on the "Terminal" section, and go to "New Terminal":
 
-![NewTerminal](VScodeNewTerminal.PNG)
+![NewTerminal](week_2_source/VScodeNewTerminal.PNG)
 
 
 
  Alternatively you can press Ctrl+Shift+`. This will open a new terminal where we can put in commands:
 
- ![OpenTerminal](VScodeTerminal.PNG) 
+ ![OpenTerminal](week_2_source/VScodeTerminal.PNG) 
 
  Before you can connect remotely, you will need to ensure you have installed a program called [OpenSSH](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse). In addition, you will need to access your course specific CS15L account, which you can set up [here](https://sdacs.ucsd.edu/~icc/index.php). Your account name should be in a similar format to "cs15lwi22zz@ieng6.ucsd.edu".
 
@@ -29,7 +29,7 @@ Now that you have a working environment to connect from, go to the top bar of VS
 
 You may be prompted with a message stating that the authenticity of the host cannot be established. Since this is your first time connecting, you can type "yes". Now enter your account password (you set this when getting your account). For privacy reasons, the terminal will show no input as you type. You should see something like this after logging in:
 
-![SSHLogin](SSHLogin.PNG)
+![SSHLogin](week_2_source/SSHLogin.PNG)
 
 *The ssh command, followed by your account name is how you will log in.
 
@@ -44,7 +44,7 @@ Now that you are connected to the server, you can try running some commands. Use
 
 You can see what different parts of commands do. For example, you can see the differences between "ls" and "ls -a" here:
 
-![LSCommands](LSCommands.PNG)
+![LSCommands](week_2_source/LSCommands.PNG)
 
 *Either Ctrl+D or typing  `exit` will close the connection to the server
 
@@ -68,7 +68,7 @@ Using `javac` and `java`, run the file on your computer and note the output. The
 
 You should be prompted to enter your password and the transfer will look something like this:
 
-![SCPFile](SCPFile.PNG)
+![SCPFile](week_2_source/SCPFile.PNG)
 
 Now log back into ieng6 and type `ls` ; you should see that the file is now on the server. Run it on ieng using `javac` and `java`, and compare the output with that of your local machine.
 
@@ -77,7 +77,7 @@ Now log back into ieng6 and type `ls` ; you should see that the file is now on t
 ## 5. Setting up an SSH Key
 In order to log on to ieng6 without always typing in a password, we can generate a public-private key pair. Type `ssh-keygen` into your console and you should see something like this:
 
-![SSHKeygen](SSHKeygen.PNG)
+![SSHKeygen](week_2_source/SSHKeygen.PNG)
 
 *Follow [these extra steps](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement#user-key-generation) before continuing, if you are on Windows.
 
@@ -98,11 +98,11 @@ To help you save time while running commands and editing files, you can run comm
 
 By entering `ssh cs15lwi22@ieng6.ucsd.edu "COMMAND"` (using your account), you can run a command on ieng6 from your client without first logging in. An example would look like this:
 
-![RemoteLS](RemoteLS.PNG)
+![RemoteLS](week_2_source/RemoteLS.PNG)
 
 In addition, you can run multiple commands together using semicolons. For example, running `cp WhereAmI.java OtherMain.java; javac OtherMain.java; java WhereAmI` yields the following result:
 
-![RemoteCombined](RemoteCombined.PNG)
+![RemoteCombined](week_2_source/RemoteCombined.PNG)
 
 *Some other helpful notes: 
 Pressing the up arrow in your terminal can allow you to recall previous commands. This can save you time when repeatedly running commands. For example, you could edit a file locally, then quickly upload, compile, and run it in just a few clicks.
