@@ -28,7 +28,7 @@ After changing the code to not completely stall MarkdownParse.java, it would run
 
 ![DoubleOutput](week_4_source/DoubleOutput.PNG)
 
-What we realized is that, due to only requiring the left and right parenthesis in the correct spot, the program was able to still parse the link. This cause two sets of output, one claiming the input was invalid, yet the other showing normal functionality. To fix this, we decided that this situation should throw an IllegalArgumentException, specifically when nextOpenBracket wasn't found.
+What we realized is that, due to only requiring the left and right parenthesis in the correct spot, the program was able to still parse the link. This caused two sets of output, one claiming the input was invalid, yet the other showing normal functionality. To fix this, we decided that this situation should throw an IllegalArgumentException, specifically when nextOpenBracket wasn't found.
 
 ![GithubIllegalArg](week_4_source/GithubIllegalArg.PNG)
 
@@ -43,12 +43,12 @@ Another test to try again involved invalid formatting, but changing the input to
 
 ![IndexException](week_4_source/RightParenException.PNG)
 
-Since the right parenthesis is missing, `closeParen` will not be found, and will equal -1. By throwing an exception, the program can't try to access -1 as an index.
+Since the right parenthesis is missing, `closeParen` will not be found, and will equal -1. By throwing an exception, the program is prevented from accessing -1 as an index.
 
 ![AddingExceptionThrow](week_4_source/ThrowException2.PNG)
 
 *Changes can be found on "Allow program to deal with missing right parenthesis " commit. Extra description in commit.
 
-For this case, the input not having the closing parenthesis for the link led to the program trying to access -1 as an index. Once again, the program was not equipped to handle input in this format, cauing the StringIndexOutOfBoundsException.
+For this case, the input not having the closing parenthesis for the link led to the program trying to access -1 as an index. Once again, the program was not equipped to handle input in this format, causing the StringIndexOutOfBoundsException.
 
 
