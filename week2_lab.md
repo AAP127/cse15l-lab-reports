@@ -107,4 +107,4 @@ In addition, you can run multiple commands together using semicolons. For exampl
 *A helpful note: 
 Pressing the up arrow in your terminal can allow you to recall previous commands. After saving a local file, you can upload, compile, and run it in around 6 keystrokes!
 
-![6Keystrokes](week_2_source/6Keystrokes.png)
+![6Keystrokes](week_2_source/6Keystrokes.PNG)
