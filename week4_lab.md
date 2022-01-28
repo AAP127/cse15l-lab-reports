@@ -2,7 +2,7 @@
 
 
 ## Code Change 1
-Failure inducing input: https://github.com/AAP127/markdown-parse/blob/main/test-file2.md
+Failure inducing input: [test-file2.md](https://github.com/AAP127/markdown-parse/blob/main/test-file2.md)
 
 The first major code change occurred to account for MarkdownParse.java returning no output when running on test-file2.md. The program would freeze when trying to parse the file, likely due to it's incorrect formatting.
 
@@ -22,7 +22,7 @@ To allow the program to account for the formatting of test-file2.md, we added a 
 The main issue with this test case was that the improper formatting, missing a right bracket, led the program to hang trying to find it. The "bug" of the program- it requires a rigid structure- meant that this situation would lead the program to give no response when running test-file2.md. 
 
 ## Code Change 2
-Failure inducing input: https://github.com/AAP127/markdown-parse/blob/main/test-file2.md
+Failure inducing input: [test-file2.md](https://github.com/AAP127/markdown-parse/blob/main/test-file2.md)
 
 After changing the code to not completely stall MarkdownParse.java, it would run test-file2.md, but still had some problematic results, showing up as incorrect output.
 
@@ -37,7 +37,7 @@ What we realized is that, due to only requiring the left and right parenthesis i
 In this case, the bug was that the program continued running after finding input to be invalid. As mentioned above, the link in test-file2.md had both parenthesis, allowing it to still be parsed after being deemed invalid. This led to the program printing two seperate statements.
 
 ## Code Change 3
-Failure inducing input: https://github.com/AAP127/markdown-parse/blob/main/extra-test.md
+Failure inducing input: [extra-test.md](https://github.com/AAP127/markdown-parse/blob/main/extra-test.md)
 
 Another test to try again involved invalid formatting, but changing the input to where the right parenthesis is missing; this condition is present in extra-test.md. Running MarkdownParse.java with extra-test.md crashes the program with a StringIndexOutOfBoundsException:
 
