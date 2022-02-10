@@ -51,6 +51,7 @@ Since the website name section is empty, the program should return an empty list
 
 
 ![ValidWebsiteNameCheck](week_4_source/ValidWebsiteNameCheck.PNG)
+
 *Changes can be found on "Update extra-test.md and MDP.java" commit. Extra description in commit.
 
 For this case, not checking for a valid website name allowed a link without a corresponding website name to be added to the list and displayed. By checking the website name, the program should only accept ones that a markdown file would register to be valid.
