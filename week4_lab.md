@@ -51,10 +51,8 @@ Since the website name section is empty, the program should return an empty list
 
 
 ![ValidWebsiteNameCheck](week_4_source/ValidWebsiteNameCheck.PNG)
-
 *Changes can be found on "Update extra-test.md and MDP.java" commit. Extra description in commit.
 
-
-For this case, not checking for a valid website name allowed a link without a corresponding website name to be added to the list and displayed. By checking that the website name, the program is able to accept website names that a markdown file would register to be valid.
+For this case, not checking for a valid website name allowed a link without a corresponding website name to be added to the list and displayed. By checking the website name, the program should only accept ones that a markdown file would register to be valid.
 
 **One small issue with the current implementation revolves around checking for a string containing a space. This is to prevent an attempt at making the website name only spaces. However, it also means that a user cannot use a space, even in a valid name. Creating a more robust method of detecting invalid website names could be an area of future development for the program.
