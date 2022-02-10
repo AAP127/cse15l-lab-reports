@@ -1,4 +1,3 @@
 Tester2
-[](google)
 
-[g](google)
+[](google)
