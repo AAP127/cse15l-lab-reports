@@ -32,7 +32,7 @@ To test for correct MarkdownParse program functionality, I created the following
 
 ![Test1](week_8_source/Test1.PNG)
 
-Upon running the tests on my markdown-parse repository, the test failed:
+Upon running the test on my markdown-parse repository, the test failed:
 
 ![MyFail1](week_8_source/MyFail1.PNG)
 
@@ -67,7 +67,7 @@ To test for correct MarkdownParse program functionality, I created the following
 
 ![Test2](week_8_source/Test2.PNG)
 
-Upon running the tests on my markdown-parse repository, the test failed:
+Upon running the test on my markdown-parse repository, the test failed:
 
 ![MyFail2](week_8_source/MyFail2.PNG)
 
@@ -117,7 +117,7 @@ To test for correct MarkdownParse program functionality, I created the following
 
 ![Test3](week_8_source/Test3.PNG)
 
-Upon running the tests on my markdown-parse repository, the test failed:
+Upon running the test on my markdown-parse repository, the test failed:
 
 ![MyFail3](week_8_source/MyFail3.PNG)
 
@@ -126,4 +126,4 @@ When running the test on the other group's markdown-parse repository, it also fa
 ![BenFail3](week_8_source/BenFail3.PNG)
 
 
--For handling newlines, I think the changes would be more complex than 10 lines. For the website name, newline characters shouldn't exist and for the link, it can only consist of one newline with the website name and no other text. The website name [between the brackets] could be checked to ensure it doesn't contain any newline characters. As for the link, it has to be checked for no newlines, along with ensuring there are no spaces between characters. Like the previous case, if done very efficiently, the changes could be implemented in around 10 lines; my main concerns would just be since there would be multiple cases/conditions to check.
+-For handling newlines, I think the changes would be more complex than 10 lines; in this case I believe not handling newlines caused the program to "parse" the signficant amount of text seen. For the website name, newline characters shouldn't exist and for the link, it can only consist of one newline with the website name and no other text. The website name [between the brackets] could be checked to ensure it doesn't contain any newline characters. As for the link, it has to be checked for no newlines, along with ensuring there are no spaces between characters. Like the previous case, if done very efficiently, the changes could likely be implemented in 10 or less lines; my main concerns would just be since there would be multiple cases/conditions to check.
