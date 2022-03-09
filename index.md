@@ -6,4 +6,6 @@
 
 ## Week 6: [Streamlining SSH Configuration](https://aap127.github.io/cse15l-lab-reports/lab-report-3-week-6)
 
-## Week 8: [MarkdownParse Implementation Testing](https://aap127.github.io/cse15l-lab-reports/lab-report-3-week-8)
+## Week 8: [MarkdownParse Implementation Testing](https://aap127.github.io/cse15l-lab-reports/lab-report-4-week-8)
+
+## Week 10: [MarkdownParse Implementation Differences](https://aap127.github.io/cse15l-lab-reports/lab-report-5-week-10)
