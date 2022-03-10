@@ -1,8 +1,8 @@
 # Week 10 Lab Report: MarkdownParse Implementation Differences
 
-To understand the differences between my implementation and the instructors' implementation of markdown-parse, I ran a bash script which parsed all 652 files, and then saved the results to a file, for both implementations. 
+* To understand the differences between my implementation and the instructors' implementation of markdown-parse, I ran a bash script which parsed all 652 files, and then saved the results to a file, for both implementations. 
 
-I originally used `diff` to determine the differences between these files, however ran into discrepancies in file formatting. For the following output differences, I ended up just manually searching for differences, using `diff` to give me an idea of generally where they might be.
+* I originally used `diff` to determine the differences between these files, however ran into discrepancies in file formatting. For the following output differences, I ended up just manually searching for differences, using `diff` to give me an idea of generally where they might be.
 
 
 ## Output Difference 1: `571.md`
@@ -20,13 +20,14 @@ The file's actual contents are as follows:
 ![foo](/url "title")
 ```
 
-Given the break within the "url" section of the link, this is an invalid link, and MarkdownParse should return an empty list when parsing this file. In this case, the instructors' implementation was more accurate.
+Given the break within the "url" section of the link, this is an invalid link, and MarkdownParse should return an empty list when parsing this file. In this case, the instructors' implementation was correct.
 
 In my implementation, my code only checks if the bracketing arrangement is correct to add a link. However, I could add another section to trim the potential link and ensure it doesn't contain a space inside the text. This could be a condition checked alongside the bracket formatting on line 61 in my code (shown in the image below):
 
 ![Change1](week_10_source/CodeChange1.PNG)
 
 Checking for a space within the link text (inside the parenthesis) would prevent my implementation from registering this file (or other files with spaces in the link text) as valid links.
+
 
 
 ## Output Difference 2: `495.md`
@@ -50,6 +51,7 @@ In my implementation, my code immediately stops parsing the potential link when 
 
 
 ![Change2](week_10_source/CodeChange2.PNG)
-*This would be the relevant section to make the afforementioned changes in my implementation.
+
+* This would be the relevant section to make the afforementioned changes in my implementation. The counter could be created after line 51, and the logic to continue or finish parsing could be implemented before line 53.
 
 Implementing this parenthesis-checking system would allow my program to not stop before a link is actually finished, leading to proper link parsing.
